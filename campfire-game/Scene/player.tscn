@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c63n6djt4wld6"]
+
+[ext_resource type="Script" uid="uid://ct6xshwkosd6l" path="res://Scripts/player.gd" id="1_xa75v"]
+[ext_resource type="Script" uid="uid://djceg7bjhsi5i" path="res://Scripts/state_machine.gd" id="2_58ae2"]
+[ext_resource type="Script" uid="uid://bui2k85tqksbn" path="res://Scripts/state.gd" id="3_ivevv"]
+[ext_resource type="Script" uid="uid://bs3sf4hhbca1v" path="res://Scripts/walk.gd" id="4_58ae2"]
+[ext_resource type="Script" uid="uid://cx6ypftg7x4l1" path="res://Scripts/idle.gd" id="4_ivevv"]
+[ext_resource type="Script" uid="uid://dvcoumjtoqojb" path="res://Scene/dash.gd" id="6_r6jsd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6jsd"]
+size = Vector2(42, 40)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p6qlh"]
+
+[node name="Player" type="CharacterBody2D" unique_id=895730674]
+script = ExtResource("1_xa75v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671081495]
+shape = SubResource("RectangleShape2D_r6jsd")
+
+[node name="state_machine" type="Node" parent="." unique_id=139389044 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("2_58ae2")
+starting_state = NodePath("idle")
+
+[node name="State" type="Node" parent="state_machine" unique_id=1184910285]
+script = ExtResource("3_ivevv")
+
+[node name="idle" type="Node" parent="state_machine" unique_id=1439372741 node_paths=PackedStringArray("move_state")]
+script = ExtResource("4_ivevv")
+move_state = NodePath("../walk")
+
+[node name="walk" type="Node" parent="state_machine" unique_id=1137437637 node_paths=PackedStringArray("idle_state", "dash_state")]
+script = ExtResource("4_58ae2")
+idle_state = NodePath("../idle")
+dash_state = NodePath("../dash")
+
+[node name="dash" type="Node" parent="state_machine" unique_id=707685381 node_paths=PackedStringArray("idle_state", "move_state")]
+script = ExtResource("6_r6jsd")
+idle_state = NodePath("../idle")
+move_state = NodePath("../walk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=649263639]
+position = Vector2(-1.0728836e-06, -1.0728836e-06)
+scale = Vector2(42, 40)
+texture = SubResource("PlaceholderTexture2D_p6qlh")
