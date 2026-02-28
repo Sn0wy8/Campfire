@@ -1,4 +1,4 @@
-class_name Player
+class_name Enemy
 extends CharacterBody2D
 
 @onready
@@ -6,7 +6,6 @@ var state_machine = $state_machine
 
 func _ready() -> void:
 	state_machine.init(self)
-	add_to_group("Player")
 	
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
