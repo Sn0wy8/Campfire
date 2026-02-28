@@ -28,3 +28,7 @@ func _process(delta: float) -> void:
 	gun.look_at(get_global_mouse_position())
 
 	state_machine.process_frame(delta)
+
+
+func _on_health_health_depleted() -> void:
+	pass # Replace with function body.
