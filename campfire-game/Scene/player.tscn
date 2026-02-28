@@ -52,3 +52,6 @@ scale = Vector2(0.87499994, 0.87499994)
 
 [node name="Gun" parent="GunPivot" unique_id=1672383526 instance=ExtResource("7_p6qlh")]
 position = Vector2(69.71427, 4.5714273)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1737340103]
+position_smoothing_enabled = true
