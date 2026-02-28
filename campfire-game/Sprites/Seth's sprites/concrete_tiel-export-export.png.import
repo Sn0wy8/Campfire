@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyhl8higuicq"
-path="res://.godot/imported/concrete_tiel..png-c8758517951d07c9b53b5d106ecdd239.ctex"
+uid="uid://cw12mudijtvtp"
+path="res://.godot/imported/concrete_tiel-export-export.png-875199139bf26a496ee744370e359646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Seth's sprites/concrete_tiel..png"
-dest_files=["res://.godot/imported/concrete_tiel..png-c8758517951d07c9b53b5d106ecdd239.ctex"]
+source_file="res://Sprites/Seth's sprites/concrete_tiel-export-export.png"
+dest_files=["res://.godot/imported/concrete_tiel-export-export.png-875199139bf26a496ee744370e359646.ctex"]
 
 [params]
 

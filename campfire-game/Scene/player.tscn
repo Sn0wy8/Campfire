@@ -13,7 +13,19 @@ size = Vector2(42, 40)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p6qlh"]
 
+[sub_resource type="Gradient" id="Gradient_p6qlh"]
+offsets = PackedFloat32Array(0.36, 0.628)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2sw5t"]
+gradient = SubResource("Gradient_p6qlh")
+width = 600
+height = 600
+fill = 1
+fill_from = Vector2(0.48265895, 0.50289017)
+
 [node name="Player" type="CharacterBody2D" unique_id=895730674]
+light_mask = 0
 script = ExtResource("1_xa75v")
 gun_hold_distance = 7.69
 
@@ -51,7 +63,15 @@ position = Vector2(3.8146973e-06, 2.3841858e-07)
 scale = Vector2(0.87499994, 0.87499994)
 
 [node name="Gun" parent="GunPivot" unique_id=1672383526 instance=ExtResource("7_p6qlh")]
+light_mask = 0
 position = Vector2(69.71427, 4.5714273)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1737340103]
 position_smoothing_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1500218298]
+light_mask = 4
+energy = 0.3
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_2sw5t")
