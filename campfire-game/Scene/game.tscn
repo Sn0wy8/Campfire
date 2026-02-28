@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dlnpeufea0mhd"]
 
+[ext_resource type="PackedScene" uid="uid://blmt5dpbh4tr4" path="res://Scene/enemy.tscn" id="1_4jv7b"]
 [ext_resource type="PackedScene" uid="uid://c63n6djt4wld6" path="res://Scene/player.tscn" id="1_mhtsl"]
 [ext_resource type="Texture2D" uid="uid://cw12mudijtvtp" path="res://Sprites/Seth's sprites/concrete_tiel-export-export.png" id="2_w51g1"]
 
@@ -512,6 +513,10 @@ sources/2 = SubResource("TileSetAtlasSource_8f6ah")
 [sub_resource type="Environment" id="Environment_w51g1"]
 
 [node name="Game" type="Node2D" unique_id=1219891007]
+
+[node name="Enemy" parent="." unique_id=1983672463 node_paths=PackedStringArray("player") instance=ExtResource("1_4jv7b")]
+position = Vector2(767, 112)
+player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=895730674 instance=ExtResource("1_mhtsl")]
 z_index = 3
