@@ -535,3 +535,4 @@ tile_set = SubResource("TileSet_sagxc")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=385556363]
 light_mask = 2
+color = Color(0.15727392, 0.15727395, 0.15727395, 1)
