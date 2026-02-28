@@ -15,6 +15,7 @@ size = Vector2(42, 40)
 
 [node name="Player" type="CharacterBody2D" unique_id=895730674]
 script = ExtResource("1_xa75v")
+gun_hold_distance = 7.6899999999999995
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671081495]
 shape = SubResource("RectangleShape2D_r6jsd")
@@ -45,6 +46,9 @@ position = Vector2(-1.0728836e-06, -1.0728836e-06)
 scale = Vector2(42, 40)
 texture = SubResource("PlaceholderTexture2D_p6qlh")
 
-[node name="Gun" parent="." unique_id=1672383526 instance=ExtResource("7_p6qlh")]
-position = Vector2(61, 3.9999998)
-scale = Vector2(0.875, 0.875)
+[node name="GunPivot" type="Marker2D" parent="." unique_id=430905150]
+position = Vector2(3.8146973e-06, 2.3841858e-07)
+scale = Vector2(0.87499994, 0.87499994)
+
+[node name="Gun" parent="GunPivot" unique_id=1672383526 instance=ExtResource("7_p6qlh")]
+position = Vector2(69.71427, 4.5714273)

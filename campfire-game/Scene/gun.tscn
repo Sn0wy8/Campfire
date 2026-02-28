@@ -7,20 +7,16 @@
 script = ExtResource("1_0fcgr")
 
 [node name="RotationOffset" type="Node2D" parent="." unique_id=119043462]
+position = Vector2(-37, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RotationOffset" unique_id=788204560]
-position = Vector2(0, 9.536743e-07)
+position = Vector2(54, -19)
 scale = Vector2(5.0625, 4.75)
 texture = ExtResource("1_qaof2")
-
-[node name="shadow" type="Sprite2D" parent="RotationOffset/Sprite2D" unique_id=1775818900]
-modulate = Color(0, 0, 0, 0.21568628)
-z_index = -1
-position = Vector2(0, 9.536743e-07)
-texture = ExtResource("1_qaof2")
+centered = false
 
 [node name="shoot_pos" type="Marker2D" parent="RotationOffset/Sprite2D" unique_id=1266414401]
-position = Vector2(7.308642, -2.9473686)
+position = Vector2(16, 1.0526314)
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=1466448835]
 one_shot = true

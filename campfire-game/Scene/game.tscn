@@ -6,3 +6,4 @@
 
 [node name="Player" parent="." unique_id=895730674 instance=ExtResource("1_mhtsl")]
 position = Vector2(334, 218)
+gun_hold_distance = 0.0
