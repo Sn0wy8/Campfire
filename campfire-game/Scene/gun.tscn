@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ch400rs0kpq2n"]
+
+[ext_resource type="Script" uid="uid://bm8ulxietglja" path="res://Scene/gun.gd" id="1_0fcgr"]
+[ext_resource type="Texture2D" uid="uid://dvm5c2kk6m6tj" path="res://Sprites/Ranitayas Guns Pack (16+ pixelart guns)/Pistols/7Pistol07.png" id="1_qaof2"]
+
+[node name="Gun" type="Node2D" unique_id=1672383526]
+script = ExtResource("1_0fcgr")
+
+[node name="RotationOffset" type="Node2D" parent="." unique_id=119043462]
+
+[node name="Sprite2D" type="Sprite2D" parent="RotationOffset" unique_id=788204560]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(5.0625, 4.75)
+texture = ExtResource("1_qaof2")
+
+[node name="shadow" type="Sprite2D" parent="RotationOffset/Sprite2D" unique_id=1775818900]
+modulate = Color(0, 0, 0, 0.21568628)
+z_index = -1
+position = Vector2(0, 9.536743e-07)
+texture = ExtResource("1_qaof2")
+
+[node name="shoot_pos" type="Marker2D" parent="RotationOffset/Sprite2D" unique_id=1266414401]
+position = Vector2(7.308642, -2.9473686)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1466448835]
+one_shot = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
