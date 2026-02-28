@@ -12,7 +12,7 @@ var gun_hold_distance: float
 
 func _ready() -> void:
 	state_machine.init(self)
-	add_to_group("Player")
+	add_to_group("player")
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)

@@ -13,7 +13,7 @@ size = Vector2(42, 40)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p6qlh"]
 
-[node name="Player" type="CharacterBody2D" unique_id=895730674]
+[node name="Player" type="CharacterBody2D" unique_id=895730674 groups=["Player"]]
 script = ExtResource("1_xa75v")
 gun_hold_distance = 7.69
 

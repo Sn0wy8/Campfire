@@ -1,42 +1,44 @@
 [gd_scene format=3 uid="uid://blmt5dpbh4tr4"]
 
-[ext_resource type="Script" uid="uid://cqusvlb7uh0al" path="res://Scene/enemy.gd" id="1_4jekx"]
-[ext_resource type="Script" uid="uid://c6sv1er57dbvu" path="res://Scene/state_machine.gd" id="2_s685e"]
-[ext_resource type="Script" uid="uid://datnxu1s3suok" path="res://Scene/state.gd" id="3_44hyy"]
-[ext_resource type="Script" uid="uid://bvo2a162dgyif" path="res://Scene/idle.gd" id="4_0qcj2"]
-[ext_resource type="Script" uid="uid://d2l3ba78inyac" path="res://Scene/wander.gd" id="5_5op34"]
-[ext_resource type="Script" uid="uid://ccvtqoeo8pgb3" path="res://Scene/chase.gd" id="6_r6llc"]
-[ext_resource type="Script" uid="uid://dxje3qx18t4s4" path="res://Scene/attack.gd" id="7_00taw"]
+[ext_resource type="Script" uid="uid://7csn70pvu80b" path="res://Scene/enemy.gd" id="1_4jekx"]
+[ext_resource type="Script" uid="uid://b6bdonqn07ci0" path="res://Scene/StateMachine.gd" id="2_4jekx"]
+[ext_resource type="Script" uid="uid://17uldr36tdyj" path="res://Scene/IdleState.gd" id="3_s685e"]
+[ext_resource type="Script" uid="uid://drmalq0cuvodg" path="res://Scene/WanderState.gd" id="4_n6qjc"]
+[ext_resource type="Script" uid="uid://8u2jh6xiulag" path="res://Scene/ChaseState.gd" id="5_hti8k"]
+[ext_resource type="Script" uid="uid://ffmjivemksla" path="res://Scene/AttackState.gd" id="6_44hyy"]
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1983672463]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hti8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44hyy"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1983672463 groups=["player"]]
 script = ExtResource("1_4jekx")
+attack_range = 0.285
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1670706923]
+avoidance_enabled = true
+
+[node name="StateMachine" type="Node" parent="." unique_id=707187327]
+script = ExtResource("2_4jekx")
+
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1570878578]
+script = ExtResource("3_s685e")
+
+[node name="WanderState" type="Node" parent="StateMachine" unique_id=2145085652]
+script = ExtResource("4_n6qjc")
+
+[node name="ChaseState" type="Node" parent="StateMachine" unique_id=1137077346]
+script = ExtResource("5_hti8k")
+
+[node name="AttackState" type="Node" parent="StateMachine" unique_id=1827399711]
+script = ExtResource("6_44hyy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1198770945]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339109612]
+scale = Vector2(100, 100)
+texture = SubResource("PlaceholderTexture2D_hti8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=67163452]
-
-[node name="state_machine" type="Node" parent="." unique_id=707187327 node_paths=PackedStringArray("starting_state")]
-script = ExtResource("2_s685e")
-starting_state = NodePath("idle")
-
-[node name="State" type="Node" parent="state_machine" unique_id=1626919503]
-script = ExtResource("3_44hyy")
-
-[node name="idle" type="Node" parent="state_machine" unique_id=1570878578 node_paths=PackedStringArray("wander_state", "chase_state")]
-script = ExtResource("4_0qcj2")
-wander_state = NodePath("../wander")
-chase_state = NodePath("../chase")
-
-[node name="wander" type="Node" parent="state_machine" unique_id=2145085652 node_paths=PackedStringArray("idle_state", "chase_state")]
-script = ExtResource("5_5op34")
-idle_state = NodePath("../idle")
-chase_state = NodePath("../chase")
-
-[node name="chase" type="Node" parent="state_machine" unique_id=1137077346 node_paths=PackedStringArray("wander_state", "attack_state")]
-script = ExtResource("6_r6llc")
-wander_state = NodePath("../wander")
-attack_state = NodePath("../attack")
-
-[node name="attack" type="Node" parent="state_machine" unique_id=1827399711 node_paths=PackedStringArray("chase_state")]
-script = ExtResource("7_00taw")
-chase_state = NodePath("../chase")
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_44hyy")
