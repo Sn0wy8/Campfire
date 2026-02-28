@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bs3sf4hhbca1v" path="res://Scripts/walk.gd" id="4_58ae2"]
 [ext_resource type="Script" uid="uid://cx6ypftg7x4l1" path="res://Scripts/idle.gd" id="4_ivevv"]
 [ext_resource type="Script" uid="uid://dvcoumjtoqojb" path="res://Scene/dash.gd" id="6_r6jsd"]
+[ext_resource type="PackedScene" uid="uid://ch400rs0kpq2n" path="res://Scene/gun.tscn" id="7_p6qlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6jsd"]
 size = Vector2(42, 40)
@@ -43,3 +44,7 @@ move_state = NodePath("../walk")
 position = Vector2(-1.0728836e-06, -1.0728836e-06)
 scale = Vector2(42, 40)
 texture = SubResource("PlaceholderTexture2D_p6qlh")
+
+[node name="Gun" parent="." unique_id=1672383526 instance=ExtResource("7_p6qlh")]
+position = Vector2(61, 3.9999998)
+scale = Vector2(0.875, 0.875)
