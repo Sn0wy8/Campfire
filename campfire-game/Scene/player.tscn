@@ -1,33 +1,29 @@
 [gd_scene format=3 uid="uid://c63n6djt4wld6"]
 
 [ext_resource type="Script" uid="uid://ct6xshwkosd6l" path="res://Scripts/Player/player.gd" id="1_xa75v"]
+[ext_resource type="Script" uid="uid://pjfdskhffnij" path="res://Scene/health.gd" id="2_2sw5t"]
 [ext_resource type="Script" uid="uid://djceg7bjhsi5i" path="res://Scripts/Player/state_machine.gd" id="2_58ae2"]
 [ext_resource type="Script" uid="uid://bui2k85tqksbn" path="res://Scripts/Player/state.gd" id="3_ivevv"]
 [ext_resource type="Script" uid="uid://bs3sf4hhbca1v" path="res://Scripts/Player/walk.gd" id="4_58ae2"]
 [ext_resource type="Script" uid="uid://cx6ypftg7x4l1" path="res://Scripts/Player/idle.gd" id="4_ivevv"]
 [ext_resource type="Script" uid="uid://dvcoumjtoqojb" path="res://Scripts/Player/dash.gd" id="6_r6jsd"]
 [ext_resource type="PackedScene" uid="uid://ch400rs0kpq2n" path="res://Scene/gun.tscn" id="7_p6qlh"]
+[ext_resource type="Script" uid="uid://d1k8d5yo63gfu" path="res://Scene/hurtbox.gd" id="9_ij4jb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6jsd"]
 size = Vector2(42, 40)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p6qlh"]
 
-[sub_resource type="Gradient" id="Gradient_p6qlh"]
-offsets = PackedFloat32Array(0.36, 0.628)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2sw5t"]
-gradient = SubResource("Gradient_p6qlh")
-width = 600
-height = 600
-fill = 1
-fill_from = Vector2(0.48265895, 0.50289017)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c68nv"]
 
 [node name="Player" type="CharacterBody2D" unique_id=895730674]
 light_mask = 0
 script = ExtResource("1_xa75v")
 gun_hold_distance = 7.69
+
+[node name="Health" type="Node" parent="." unique_id=1676030383]
+script = ExtResource("2_2sw5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671081495]
 shape = SubResource("RectangleShape2D_r6jsd")
@@ -69,9 +65,9 @@ position = Vector2(69.71427, 4.5714273)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1737340103]
 position_smoothing_enabled = true
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1500218298]
-light_mask = 4
-energy = 0.3
-shadow_enabled = true
-shadow_filter = 2
-texture = SubResource("GradientTexture2D_2sw5t")
+[node name="Hurtbox" type="Area2D" parent="." unique_id=217352902]
+script = ExtResource("9_ij4jb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=653245017]
+scale = Vector2(2.055, 2.055)
+shape = SubResource("RectangleShape2D_c68nv")
