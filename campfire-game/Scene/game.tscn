@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dlnpeufea0mhd"]
+
+[ext_resource type="PackedScene" uid="uid://c63n6djt4wld6" path="res://Scene/player.tscn" id="1_mhtsl"]
+
+[node name="Game" type="Node2D" unique_id=1219891007]
+
+[node name="Player" parent="." unique_id=895730674 instance=ExtResource("1_mhtsl")]
+position = Vector2(334, 218)
+gun_hold_distance = 0.0
