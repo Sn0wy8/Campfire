@@ -15,7 +15,7 @@ size = Vector2(42, 40)
 
 [node name="Player" type="CharacterBody2D" unique_id=895730674]
 script = ExtResource("1_xa75v")
-gun_hold_distance = 7.6899999999999995
+gun_hold_distance = 7.69
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671081495]
 shape = SubResource("RectangleShape2D_r6jsd")

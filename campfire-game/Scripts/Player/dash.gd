@@ -1,7 +1,7 @@
-extends State
+extends PlayerState
 
-@export var idle_state: State
-@export var move_state: State
+@export var idle_state: PlayerState
+@export var move_state: PlayerState
 
 @export var dash_speed: float = 1000
 @export var dash_time: float = 0.2
@@ -19,7 +19,7 @@ func enter() -> void:
 	
 	dash_direction = dash_direction.normalized()
 
-func process_physics(delta: float) -> State:
+func process_physics(delta: float) -> PlayerState:
 	dash_timer -= delta
 	
 	parent.velocity = dash_direction * dash_speed
