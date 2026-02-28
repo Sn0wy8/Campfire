@@ -18,6 +18,7 @@ size = Vector2(42, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c68nv"]
 
 [node name="Player" type="CharacterBody2D" unique_id=895730674]
+light_mask = 0
 script = ExtResource("1_xa75v")
 gun_hold_distance = 7.69
 
@@ -58,6 +59,7 @@ position = Vector2(3.8146973e-06, 2.3841858e-07)
 scale = Vector2(0.87499994, 0.87499994)
 
 [node name="Gun" parent="GunPivot" unique_id=1672383526 instance=ExtResource("7_p6qlh")]
+light_mask = 0
 position = Vector2(69.71427, 4.5714273)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1737340103]
