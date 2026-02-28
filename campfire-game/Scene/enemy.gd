@@ -7,7 +7,6 @@ extends CharacterBody2D
 
 var can_shoot := true
 var enemyhealth
-var phase_two := false
 var can_dash := true
 
 @export var player : Node2D
@@ -53,8 +52,6 @@ func shoot_radial():
 		return
 	
 	var bullet_count = 1
-	if phase_two:
-		bullet_count = 3   # spread shots in phase 2
 	
 	var base_direction = (player.global_position - global_position).normalized()
 	
@@ -75,17 +72,9 @@ func shoot_radial():
 
 func take_damage(amount):
 	enemyhealth -= amount
-	
-	if enemyhealth <= enemy_max_health / 2 and not phase_two:
-		enter_phase_two()
 
 	if enemyhealth <= 0:
 		die()
-
-func enter_phase_two():
-	phase_two = true
-	speed *= 1.5
-	$AttackTimer.wait_time = 1.2
 
 func die():
 	queue_free()

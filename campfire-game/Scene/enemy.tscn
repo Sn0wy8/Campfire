@@ -10,6 +10,7 @@
 [node name="Enemy" type="CharacterBody2D" unique_id=1983672463 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_4jekx")
+enemy_max_health = 192
 bullet_scene = ExtResource("2_4jekx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339109612]
@@ -24,5 +25,9 @@ wait_time = 0.206
 autostart = true
 
 [node name="DashCooldown" type="Timer" parent="." unique_id=1946667745]
+
+[node name="HurtBoxEnemy" type="Area2D" parent="." unique_id=370896873]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxEnemy" unique_id=1107634141]
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
