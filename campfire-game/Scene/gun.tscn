@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ch400rs0kpq2n"]
 
-[ext_resource type="Script" uid="uid://bm8ulxietglja" path="res://Scene/gun.gd" id="1_0fcgr"]
+[ext_resource type="Script" uid="uid://bm8ulxietglja" path="res://Scripts/Player/gun.gd" id="1_0fcgr"]
 [ext_resource type="Texture2D" uid="uid://dvm5c2kk6m6tj" path="res://Sprites/Ranitayas Guns Pack (16+ pixelart guns)/Pistols/7Pistol07.png" id="1_qaof2"]
 
 [node name="Gun" type="Node2D" unique_id=1672383526]

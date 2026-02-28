@@ -22,13 +22,15 @@ func _physics_process(delta: float) -> void:
 		_shoot()
 		can_shoot = false
 		$ShootTimer.start()
+		print("here6")
 	
 func _shoot():
 	var new_bullet = bullet_scene.instantiate()
 	new_bullet.global_position = ShootPos.global_position
 	new_bullet.global_rotation = ShootPos.global_rotation
-	get_parent().add_child(new_bullet)
-	print(ShootPos.global_position)
+	get_tree().current_scene.add_child(new_bullet)
+	print("ShootPos:", ShootPos.global_position)
+	print("here4")
 
 func _on_shoot_timer_timeout() -> void:
 	can_shoot = true
