@@ -769,3 +769,20 @@ scale = Vector2(8.535, 8.535)
 shape = SubResource("RectangleShape2D_h8jt7")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[node name="PointLight2D2" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=1372081325]
+position = Vector2(373, 1497)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=1033891419]
+position = Vector2(-514, 1568)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D4" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=1538716317]
+position = Vector2(-1, 1786)
+color = Color(0, 0.5668862, 0.11414025, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
