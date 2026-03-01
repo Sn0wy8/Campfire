@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://bybqdwn1g8fbb"]
 
 [ext_resource type="Script" uid="uid://c1bcrt7acf6fd" path="res://node_2d.gd" id="1_fohki"]
-[ext_resource type="Texture2D" uid="uid://dcarg5wee2d5" path="res://Sprites/Seth's sprites/INTRO_AREA.png" id="2_gvt14"]
+[ext_resource type="Texture2D" uid="uid://dqu71bmtve5kh" path="res://Sprites/Seth's sprites/front_idle.png" id="3_8dl2d"]
 [ext_resource type="Texture2D" uid="uid://cyvpc0gd51n3t" path="res://Sprites/Seth's sprites/intro_area_cutscene_big.png" id="3_ie6fp"]
+[ext_resource type="Texture2D" uid="uid://31g1jhkuqww0" path="res://Sprites/Seth's sprites/radio_thing.png" id="4_8dl2d"]
 
 [sub_resource type="Animation" id="Animation_ie6fp"]
-length = 8.066667
+length = 16.566668
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,27 +14,39 @@ tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0009999999, 8.033334),
+"times": PackedFloat32Array(0, 9.45, 13.5, 16.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -662), Vector2(0, 177), Vector2(0, 177), Vector2(25, 203)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(14.65),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(52, 295)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(13.566667, 16.333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -823), Vector2(0, 109.225)]
+"values": [Vector2(2, 2), Vector2(7, 7)]
 }
 
 [sub_resource type="Animation" id="Animation_fohki"]
 resource_name = "new_animation"
 length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -823), Vector2(0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gvt14"]
 _data = {
@@ -41,37 +54,52 @@ _data = {
 &"new_animation": SubResource("Animation_fohki")
 }
 
-[sub_resource type="Theme" id="Theme_gvt14"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgfk3"]
+atlas = ExtResource("3_8dl2d")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ajow"]
+atlas = ExtResource("3_8dl2d")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rat6u"]
+animations = [{
+"frames": [{
+"duration": 7.5,
+"texture": SubResource("AtlasTexture_kgfk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ajow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Cutscene" type="Node2D" unique_id=1386556195]
 script = ExtResource("1_fohki")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1017903629]
 libraries/ = SubResource("AnimationLibrary_gvt14")
-autoplay = &"new_animation"
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=541321187]
-position = Vector2(-1, 1)
-scale = Vector2(1.3242188, 1.265625)
-texture = ExtResource("2_gvt14")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1148053686]
-position = Vector2(0, -823)
-zoom = Vector2(3, 3)
-
-[node name="Label" type="Label" parent="." unique_id=286698511]
-offset_left = 238.0
-offset_top = 527.0
-offset_right = 367.0
-offset_bottom = 576.0
-theme = SubResource("Theme_gvt14")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "HEY YOU DOWN 
-HERE!!!"
+autoplay = &"RESET"
 
 [node name="IntroAreaCutsceneBig" type="Sprite2D" parent="." unique_id=1958238797]
-position = Vector2(0.99999976, -355.00003)
+position = Vector2(12.999996, -245.00003)
 scale = Vector2(1.4980469, 1.2407159)
 texture = ExtResource("3_ie6fp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=657892414]
+position = Vector2(0, -662)
+zoom = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=814814519]
+position = Vector2(-36, 250)
+sprite_frames = SubResource("SpriteFrames_rat6u")
+autoplay = "default"
+frame_progress = 0.25793034
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1642312892]
+position = Vector2(52, 295)
+texture = ExtResource("4_8dl2d")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
