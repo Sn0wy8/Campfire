@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dlnpeufea0mhd"]
 
 [ext_resource type="PackedScene" uid="uid://c63n6djt4wld6" path="res://Scene/Player/player.tscn" id="1_mhtsl"]
+[ext_resource type="PackedScene" uid="uid://lsrfvfypgbyb" path="res://Scene/checkpoint.tscn" id="1_thj8p"]
 [ext_resource type="Texture2D" uid="uid://cw12mudijtvtp" path="res://Sprites/Seth's sprites/concrete_tiel-export-export.png" id="2_w51g1"]
 [ext_resource type="PackedScene" uid="uid://xvcty7vcueg8" path="res://Scene/campfire.tscn" id="3_4jv7b"]
 [ext_resource type="Texture2D" uid="uid://d2lvp6lqo74o3" path="res://Sprites/Seth's sprites/tileset_prototype.png" id="3_ihreq"]
@@ -604,12 +605,19 @@ fill_from = Vector2(0.47398844, 0.49421966)
 
 [node name="Game" type="Node2D" unique_id=1219891007]
 
+[node name="checkpoint" parent="." unique_id=1112325589 instance=ExtResource("1_thj8p")]
+position = Vector2(239, -271.5)
+scale = Vector2(2.203125, 0.71093744)
+
 [node name="Enemy" parent="." unique_id=205773125 node_paths=PackedStringArray("player") instance=ExtResource("4_03iqk")]
+z_index = 4
+position = Vector2(240.855, 0)
+scale = Vector2(2.115, 2.115)
 player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=895730674 groups=["PlayerHitbox", "player"] instance=ExtResource("1_mhtsl")]
 z_index = 3
-position = Vector2(253, -287)
+position = Vector2(253, -309)
 scale = Vector2(2, 2)
 gun_hold_distance = 0.0
 

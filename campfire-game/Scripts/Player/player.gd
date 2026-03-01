@@ -22,7 +22,7 @@ var dash_cooldown_timer := 0.0
 
 func _ready() -> void:
 	state_machine.init(self)
-	add_to_group("Player")
+	add_to_group("player")
 
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
@@ -47,4 +47,5 @@ func _process(delta: float) -> void:
 
 
 func _on_health_health_depleted() -> void:
-	print("DEATH")
+	position = GlobalScript.checkpoint_pos
+	print("death")
