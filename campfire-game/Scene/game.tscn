@@ -690,7 +690,6 @@ tile_map_data = PackedByteArray("AAABAAAAAgAAAAMAAAACAAAAAgABAAMAAAADAAAAAgABAAM
 tile_set = SubResource("TileSet_sagxc")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=385556363]
-visible = false
 color = Color(0.15727392, 0.15727395, 0.15727395, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=465768320]
@@ -737,5 +736,23 @@ texture = SubResource("GradientTexture2D_03iqk")
 [node name="PointLight2D" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=671334580]
 position = Vector2(26, 567)
 color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=1372081325]
+position = Vector2(373, 1497)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=1033891419]
+position = Vector2(-514, 1568)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D4" type="PointLight2D" parent="lights/PointLight2D/PointLight2D3" unique_id=1538716317]
+position = Vector2(-1, 1786)
+color = Color(0, 0.5668862, 0.11414025, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_03iqk")
