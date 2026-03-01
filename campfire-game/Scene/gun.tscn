@@ -10,8 +10,8 @@ script = ExtResource("1_0fcgr")
 position = Vector2(-37, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RotationOffset" unique_id=788204560]
-position = Vector2(54, -19)
-scale = Vector2(5.0625, 4.75)
+position = Vector2(54.999996, -5.0000005)
+scale = Vector2(1.6875002, 1.2500002)
 texture = ExtResource("1_qaof2")
 centered = false
 
