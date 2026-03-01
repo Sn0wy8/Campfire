@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://c63n6djt4wld6"]
 
 [ext_resource type="Script" uid="uid://ct6xshwkosd6l" path="res://Scripts/Player/player.gd" id="1_xa75v"]
-[ext_resource type="Script" uid="uid://pjfdskhffnij" path="res://Scene/health.gd" id="2_2sw5t"]
+[ext_resource type="Script" uid="uid://pjfdskhffnij" path="res://Scripts/health.gd" id="2_2sw5t"]
 [ext_resource type="Script" uid="uid://djceg7bjhsi5i" path="res://Scripts/Player/state_machine.gd" id="2_58ae2"]
-[ext_resource type="Texture2D" uid="uid://bjjx882jjcnu4" path="res://pngs/pngs/back idle.png" id="3_fn0wv"]
+[ext_resource type="Texture2D" uid="uid://bjjx882jjcnu4" path="res://Sprites/pngs/pngs/back idle.png" id="3_fn0wv"]
 [ext_resource type="Script" uid="uid://bui2k85tqksbn" path="res://Scripts/Player/state.gd" id="3_ivevv"]
 [ext_resource type="Script" uid="uid://bs3sf4hhbca1v" path="res://Scripts/Player/walk.gd" id="4_58ae2"]
-[ext_resource type="Texture2D" uid="uid://doj06bq0i07bb" path="res://pngs/pngs/front idle.png" id="4_eqmt2"]
+[ext_resource type="Texture2D" uid="uid://doj06bq0i07bb" path="res://Sprites/pngs/pngs/front idle.png" id="4_eqmt2"]
 [ext_resource type="Script" uid="uid://cx6ypftg7x4l1" path="res://Scripts/Player/idle.gd" id="4_ivevv"]
-[ext_resource type="Texture2D" uid="uid://bbywyj1a85kgd" path="res://pngs/pngs/idle side.png" id="5_c40dt"]
-[ext_resource type="Texture2D" uid="uid://bscvjgigs0dty" path="res://pngs/pngs/back run.png" id="6_lgjog"]
+[ext_resource type="Texture2D" uid="uid://bbywyj1a85kgd" path="res://Sprites/pngs/pngs/idle side.png" id="5_c40dt"]
+[ext_resource type="Texture2D" uid="uid://bscvjgigs0dty" path="res://Sprites/pngs/pngs/back run.png" id="6_lgjog"]
 [ext_resource type="Script" uid="uid://dvcoumjtoqojb" path="res://Scripts/Player/dash.gd" id="6_r6jsd"]
-[ext_resource type="Texture2D" uid="uid://bnsx4oqlrclwt" path="res://pngs/pngs/front run.png" id="7_lhccw"]
-[ext_resource type="PackedScene" uid="uid://ch400rs0kpq2n" path="res://Scene/gun.tscn" id="7_p6qlh"]
-[ext_resource type="Texture2D" uid="uid://dcmx0p3e8kit3" path="res://pngs/pngs/side final.png" id="8_7d6xm"]
-[ext_resource type="Script" uid="uid://d1k8d5yo63gfu" path="res://Scene/hurtbox.gd" id="9_ij4jb"]
+[ext_resource type="Texture2D" uid="uid://bnsx4oqlrclwt" path="res://Sprites/pngs/pngs/front run.png" id="7_lhccw"]
+[ext_resource type="PackedScene" uid="uid://ch400rs0kpq2n" path="res://Scene/Player/gun.tscn" id="7_p6qlh"]
+[ext_resource type="Texture2D" uid="uid://dcmx0p3e8kit3" path="res://Sprites/pngs/pngs/side final.png" id="8_7d6xm"]
+[ext_resource type="Script" uid="uid://d1k8d5yo63gfu" path="res://Scripts/hurtbox.gd" id="9_ij4jb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2sr8w"]
 atlas = ExtResource("3_fn0wv")
@@ -285,6 +285,7 @@ gun_hold_distance = 7.69
 
 [node name="Health" type="Node" parent="." unique_id=1676030383]
 script = ExtResource("2_2sw5t")
+max_health = 1
 
 [node name="animations" type="AnimatedSprite2D" parent="." unique_id=1777733309]
 sprite_frames = SubResource("SpriteFrames_xmvmh")
