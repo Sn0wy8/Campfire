@@ -9,7 +9,7 @@ signal received_damage(damage: int)
 
 
 func _ready():
-	connect("area_entered", _on_area_entered)
+	connect("area_entered",_on_area_entered)
 
 
 func _on_area_entered(hitbox: EnemyHitBox) -> void:
