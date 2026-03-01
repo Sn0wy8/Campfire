@@ -18,18 +18,14 @@ func process_physics(delta: float) -> PlayerState:
 	parent.move_and_slide()
 	if movement == Vector2.UP:
 		animated_sprite.play("run back")
-		print("1")
 	if movement == Vector2.DOWN:
 		animated_sprite.play("run front")
-		print("2")
 	if movement == Vector2.LEFT:
 		animated_sprite.play("run side")
 		animated_sprite.flip_h = false
-		print("3")
 	if movement == Vector2.RIGHT:
 		animated_sprite.play("run side")
 		animated_sprite.flip_h = true
-		print("4")
 	# Transition to idle if not moving
 	if parent.velocity == Vector2.ZERO:
 		return idle_state

@@ -19,7 +19,6 @@ func _physics_process(delta: float) -> void:
 		_shoot()
 		can_shoot = false
 		$ShootTimer.start()
-		print("here6")
 	
 func _shoot():
 	var new_bullet = bullet_scene.instantiate()
