@@ -1,6 +1,6 @@
 extends Node2D
 
-const bullet_scene = preload("res://Scene/bullet.tscn")
+const bullet_scene = preload("uid://dx18msw2wbna2")
 
 const IS_PLAYER = true
 

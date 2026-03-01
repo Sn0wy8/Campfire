@@ -12,6 +12,14 @@ var gun_pivot: Marker2D = $GunPivot
 @export
 var gun_hold_distance: float
 
+@export var dash_speed := 1000
+@export var dash_time := 0.2
+@export var dash_cooldown := 1.0
+
+var can_dash := true
+var dash_cooldown_timer := 0.0
+
+
 func _ready() -> void:
 	state_machine.init(self)
 	add_to_group("Player")
@@ -28,6 +36,12 @@ func _process(delta: float) -> void:
 	gun.scale.y = 1 if mouse_direction.x > 0 else -1
 	gun.show_behind_parent = mouse_direction.y < 0
 	gun.look_at(get_global_mouse_position())
+		# Update dash cooldown
+	if not can_dash:
+		dash_cooldown_timer += delta
+		if dash_cooldown_timer >= dash_cooldown:
+			can_dash = true
+			dash_cooldown_timer = 0.0
 
 	state_machine.process_frame(delta)
 
