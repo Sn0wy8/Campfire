@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dw7oijxgaf31f"]
 
-[ext_resource type="Texture2D" uid="uid://dayenp2gkxjo0" path="res://Sprites/Seth's sprites/ending BETTER.png" id="1_77y81"]
+[ext_resource type="Texture2D" uid="uid://cbf0eitkeuneh" path="res://Sprites/Seth's sprites/ENDING FINAL.png" id="1_77y81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mige2"]
 atlas = ExtResource("1_77y81")
@@ -78,6 +78,18 @@ region = Rect2(4352, 0, 256, 256)
 atlas = ExtResource("1_77y81")
 region = Rect2(4608, 0, 256, 256)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kivkg"]
+atlas = ExtResource("1_77y81")
+region = Rect2(4864, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm6e6"]
+atlas = ExtResource("1_77y81")
+region = Rect2(5120, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l5xr"]
+atlas = ExtResource("1_77y81")
+region = Rect2(5376, 0, 256, 256)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7l5xr"]
 animations = [{
 "frames": [{
@@ -137,6 +149,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x5763")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kivkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm6e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l5xr")
 }],
 "loop": true,
 "name": &"default",
