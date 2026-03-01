@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://by6t4hrkk1gnh"]
 
-[ext_resource type="Script" uid="uid://ck7xb7cvdq3oy" path="res://Scene/main_menu.gd" id="1_ftydy"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_hii65"]
 [ext_resource type="Texture2D" uid="uid://0nef04ar224h" path="res://Scene/rat_run.png" id="2_87ipw"]
 [ext_resource type="Texture2D" uid="uid://msvw1h5psl8e" path="res://Scene/cover_art_type_shii.png" id="3_hii65"]
 
@@ -126,7 +126,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ftydy")
+script = ExtResource("1_hii65")
 
 [node name="Panel" type="Panel" parent="." unique_id=965288616]
 layout_mode = 1
