@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bybqdwn1g8fbb"]
+
+[ext_resource type="Script" uid="uid://c1bcrt7acf6fd" path="res://node_2d.gd" id="1_fohki"]
+[ext_resource type="Texture2D" uid="uid://dcarg5wee2d5" path="res://Sprites/Seth's sprites/INTRO_AREA.png" id="2_gvt14"]
+
+[sub_resource type="Animation" id="Animation_ie6fp"]
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -823), Vector2(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_fohki"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -823), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvt14"]
+_data = {
+&"RESET": SubResource("Animation_ie6fp"),
+&"new_animation": SubResource("Animation_fohki")
+}
+
+[sub_resource type="Theme" id="Theme_gvt14"]
+
+[node name="Cutscene" type="Node2D" unique_id=1386556195]
+script = ExtResource("1_fohki")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1017903629]
+libraries/ = SubResource("AnimationLibrary_gvt14")
+autoplay = &"new_animation"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=541321187]
+position = Vector2(-1, 1)
+scale = Vector2(1.3242188, 1.265625)
+texture = ExtResource("2_gvt14")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1148053686]
+position = Vector2(0, -823)
+zoom = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="." unique_id=286698511]
+offset_left = 238.0
+offset_top = 527.0
+offset_right = 367.0
+offset_bottom = 576.0
+theme = SubResource("Theme_gvt14")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "HEY YOU DOWN 
+HERE!!!"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
