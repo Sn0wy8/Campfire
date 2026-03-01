@@ -149,6 +149,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_p7fr2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7fr2"]
+size = Vector2(28.822495, 18.021088)
 
 [node name="Boss arena" type="Node2D" unique_id=905776944]
 
@@ -162,47 +163,62 @@ tile_set = SubResource("TileSet_jkur3")
 rendering_quadrant_size = 32
 
 [node name="TileMapLayer-other" type="TileMapLayer" parent="." unique_id=1585703340]
+tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_m3vku")
 physics_quadrant_size = 32
 
 [node name="children" type="Node" parent="." unique_id=1728431782]
 
-[node name="Enemy" parent="children" unique_id=205773125 instance=ExtResource("2_dpyt5")]
+[node name="Enemy" parent="children" unique_id=205773125 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(145, 489)
+player = NodePath("../../Player")
 
-[node name="Enemy2" parent="children" unique_id=1856522963 instance=ExtResource("2_dpyt5")]
+[node name="Enemy2" parent="children" unique_id=1856522963 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(1041, 433)
+player = NodePath("../../Player")
 
-[node name="Enemy3" parent="children" unique_id=1828486076 instance=ExtResource("2_dpyt5")]
+[node name="Enemy3" parent="children" unique_id=1828486076 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(299, 293)
+player = NodePath("../../Player")
 
-[node name="Enemy4" parent="children" unique_id=1321204067 instance=ExtResource("2_dpyt5")]
+[node name="Enemy4" parent="children" unique_id=1321204067 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(333, 706)
+player = NodePath("../../Player")
 
-[node name="Enemy7" parent="children" unique_id=1984144945 instance=ExtResource("2_dpyt5")]
+[node name="Enemy7" parent="children" unique_id=1984144945 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(969, 328)
+player = NodePath("../../Player")
 
-[node name="Enemy9" parent="children" unique_id=284041261 instance=ExtResource("2_dpyt5")]
+[node name="Enemy9" parent="children" unique_id=284041261 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(1049, 615)
+player = NodePath("../../Player")
 
-[node name="Enemy10" parent="children" unique_id=1697975535 instance=ExtResource("2_dpyt5")]
+[node name="Enemy10" parent="children" unique_id=1697975535 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(258, 627)
+player = NodePath("../../Player")
 
-[node name="Enemy8" parent="children" unique_id=1257359141 instance=ExtResource("2_dpyt5")]
+[node name="Enemy8" parent="children" unique_id=1257359141 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(369, 487)
+player = NodePath("../../Player")
 
-[node name="Enemy5" parent="children" unique_id=1272026565 instance=ExtResource("2_dpyt5")]
+[node name="Enemy5" parent="children" unique_id=1272026565 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(911, 562)
+player = NodePath("../../Player")
 
-[node name="Enemy6" parent="children" unique_id=23219076 instance=ExtResource("2_dpyt5")]
+[node name="Enemy6" parent="children" unique_id=23219076 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 position = Vector2(709, 588)
+player = NodePath("../../Player")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=260308764]
-position = Vector2(1169, 2369)
+position = Vector2(578.66, 820.46)
 script = ExtResource("4_d7qe1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1293144871]
+position = Vector2(-15.659973, 8.445007)
 scale = Vector2(8.535, 8.535)
 shape = SubResource("RectangleShape2D_p7fr2")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1670775973]
+color = Color(0.2760654, 0.2760652, 0.27606517, 1)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

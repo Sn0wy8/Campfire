@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dapo4s4copbwn"]
+[gd_scene format=3 uid="uid://dw7oijxgaf31f"]
 
 [ext_resource type="Texture2D" uid="uid://8gfs5qcuf41f" path="res://Sprites/Seth's sprites/beautiful_ending.png" id="1_77y81"]
 
@@ -163,6 +163,7 @@ animations = [{
 position = Vector2(579.00006, 328.5)
 scale = Vector2(1.2226563, 1.2226563)
 sprite_frames = SubResource("SpriteFrames_7l5xr")
+autoplay = "default"
 frame_progress = 0.9295415
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=306952973]
