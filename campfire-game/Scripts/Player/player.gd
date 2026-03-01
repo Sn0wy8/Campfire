@@ -49,3 +49,7 @@ func _process(delta: float) -> void:
 func _on_health_health_depleted() -> void:
 	position = GlobalScript.checkpoint_pos
 	print("death") 
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

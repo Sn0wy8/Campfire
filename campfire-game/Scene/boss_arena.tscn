@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://7rto5r241jh4" path="res://Sprites/Seth's sprites/concrete_tiel-export-export-export.png" id="1_33mbm"]
 [ext_resource type="PackedScene" uid="uid://c63n6djt4wld6" path="res://Scene/Player/player.tscn" id="1_jkur3"]
 [ext_resource type="PackedScene" uid="uid://dj8j82l0db0mc" path="res://Scene/Enemy/enemy.tscn" id="2_dpyt5"]
+[ext_resource type="Script" uid="uid://dhkwv05verwqt" path="res://Scene/boss_room.gd" id="4_d7qe1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpyt5"]
 texture = ExtResource("1_33mbm")
@@ -148,6 +149,8 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 255
 sources/3 = SubResource("TileSetAtlasSource_p7fr2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7fr2"]
+
 [node name="Boss arena" type="Node2D" unique_id=905776944]
 
 [node name="Player" parent="." unique_id=895730674 instance=ExtResource("1_jkur3")]
@@ -198,6 +201,15 @@ position = Vector2(911, 562)
 [node name="Enemy6" parent="children" unique_id=23219076 instance=ExtResource("2_dpyt5")]
 position = Vector2(709, 588)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=260308764]
+position = Vector2(1169, 2369)
+script = ExtResource("4_d7qe1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1293144871]
+scale = Vector2(8.535, 8.535)
+shape = SubResource("RectangleShape2D_p7fr2")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [node name="Enemy11" parent="children" unique_id=1899593747 node_paths=PackedStringArray("player") instance=ExtResource("2_dpyt5")]
 z_index = 2
 position = Vector2(686, 1231)
