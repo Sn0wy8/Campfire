@@ -2,9 +2,42 @@
 
 [ext_resource type="Script" uid="uid://btjhui42vk0gr" path="res://Scripts/Enemy/enemy.gd" id="1_d7pil"]
 [ext_resource type="Script" uid="uid://pjfdskhffnij" path="res://Scripts/health.gd" id="2_mf7eg"]
+[ext_resource type="Texture2D" uid="uid://bdl2jkrsbccw3" path="res://Sprites/pngs/rat attack.png" id="3_ga2g3"]
 [ext_resource type="Texture2D" uid="uid://cq7ksljdxgu4i" path="res://Sprites/pngs/pngs/rat run.png" id="4_l2ebk"]
 [ext_resource type="Script" uid="uid://csrwa3mfg72r0" path="res://Scripts/enemy_hit_box.gd" id="4_mf7eg"]
 [ext_resource type="Script" uid="uid://cad7m8acg3x0j" path="res://Scripts/enemy_hurt_box.gd" id="5_mf7eg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2ebk"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekgm3"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejhsw"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx1w5"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8205"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctkmp"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6klb7"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmhbo"]
+atlas = ExtResource("3_ga2g3")
+region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpvux"]
 region = Rect2(0, 0, 64, 64)
@@ -58,6 +91,35 @@ region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ekgm3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2ebk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekgm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejhsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx1w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8205")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctkmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6klb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmhbo")
+}],
+"loop": true,
+"name": &"rat_attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cpvux")
@@ -131,7 +193,7 @@ max_health = 1
 [node name="ratanimations" type="AnimatedSprite2D" parent="." unique_id=265545283]
 position = Vector2(4, -21)
 sprite_frames = SubResource("SpriteFrames_ekgm3")
-animation = &"rat_run"
+animation = &"rat_attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842522566]
 shape = SubResource("CircleShape2D_ejhsw")
