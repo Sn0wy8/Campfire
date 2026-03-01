@@ -198,7 +198,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run back",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -227,7 +227,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run front",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -256,7 +256,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run side",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn0wv"]
@@ -289,7 +289,7 @@ max_health = 1
 
 [node name="animations" type="AnimatedSprite2D" parent="." unique_id=1777733309]
 sprite_frames = SubResource("SpriteFrames_xmvmh")
-animation = &"run back"
+animation = &"run side"
 autoplay = "idle front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671081495]
