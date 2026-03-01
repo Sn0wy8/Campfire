@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://blmt5dpbh4tr4"]
+
+[ext_resource type="Script" uid="uid://cqusvlb7uh0al" path="res://Scene/enemy.gd" id="1_4jekx"]
+[ext_resource type="PackedScene" uid="uid://dfvuu5g7m0mda" path="res://enemy_bullet.tscn" id="2_4jekx"]
+[ext_resource type="Script" path="res://Scene/health.gd" id="3_n6qjc"]
+[ext_resource type="Script" path="res://Scene/hurt_box_enemy.gd" id="3_s685e"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_44hyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qcj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jekx"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1983672463 node_paths=PackedStringArray("health") groups=["PlayerHitbox", "player"]]
+motion_mode = 1
+script = ExtResource("1_4jekx")
+enemy_max_health = 2
+bullet_scene = ExtResource("2_4jekx")
+health = NodePath("Health")
+
+[node name="Health" type="Node" parent="." unique_id=574053725]
+script = ExtResource("3_n6qjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1339109612]
+z_index = 4
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_44hyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=67163452]
+shape = SubResource("RectangleShape2D_0qcj2")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=2047481045]
+wait_time = 0.206
+autostart = true
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=1946667745]
+
+[node name="HurtBoxEnemy" type="Area2D" parent="." unique_id=370896873 node_paths=PackedStringArray("health") groups=["PlayerHitbox"]]
+script = ExtResource("3_s685e")
+health = NodePath("../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxEnemy" unique_id=1107634141]
+shape = SubResource("RectangleShape2D_4jekx")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="received_damage" from="HurtBoxEnemy" to="." method="_on_hurt_box_enemy_received_damage"]
