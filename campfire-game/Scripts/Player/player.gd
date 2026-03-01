@@ -48,4 +48,4 @@ func _process(delta: float) -> void:
 
 func _on_health_health_depleted() -> void:
 	position = GlobalScript.checkpoint_pos
-	print("death")
+	print("death") 
