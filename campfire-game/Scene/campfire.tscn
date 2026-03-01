@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://xvcty7vcueg8"]
+
+[ext_resource type="Texture2D" uid="uid://b3w5e554m61gf" path="res://Sprites/Seth's sprites/campfire.png" id="1_ipjni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2jhm"]
+atlas = ExtResource("1_ipjni")
+region = Rect2(0, 0, 32, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2es0v"]
+atlas = ExtResource("1_ipjni")
+region = Rect2(32, 0, 32, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktobp"]
+atlas = ExtResource("1_ipjni")
+region = Rect2(64, 0, 32, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuem4"]
+atlas = ExtResource("1_ipjni")
+region = Rect2(96, 0, 32, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vucaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2jhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2es0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktobp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuem4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_j2pai"]
+offsets = PackedFloat32Array(0.132, 0.404, 0.776)
+colors = PackedColorArray(1, 1, 1, 1, 0.38372093, 0.38372093, 0.38372093, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e6u32"]
+gradient = SubResource("Gradient_j2pai")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.50289017, 0.48265895)
+
+[node name="campfire" type="AnimatedSprite2D" unique_id=175672567]
+sprite_frames = SubResource("SpriteFrames_vucaf")
+autoplay = "default"
+frame_progress = 0.08775325
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=511022083]
+color = Color(0.7065348, 0.5642204, 0.2770895, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_e6u32")
