@@ -1,4 +1,4 @@
-class_name EnemyHitBox
+class_name PlayerHitbox
 extends Area2D
 
 

@@ -3,7 +3,7 @@ extends PlayerState
 @export var dash_state: PlayerState
 
 func enter() -> void:
-	pass  # Do not set velocity here
+	pass
 
 func process_input(event: InputEvent) -> PlayerState:
 	if Input.is_action_just_pressed('dash'):
