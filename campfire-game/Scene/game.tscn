@@ -716,6 +716,24 @@ color = Color(1, 0, 0, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_03iqk")
 
+[node name="PointLight2D4" type="PointLight2D" parent="lights/PointLight2D" unique_id=820255952]
+position = Vector2(944, 1659)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D5" type="PointLight2D" parent="lights/PointLight2D" unique_id=1175171280]
+position = Vector2(259, 1749)
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
+[node name="PointLight2D6" type="PointLight2D" parent="lights/PointLight2D" unique_id=419353245]
+position = Vector2(582, 1896)
+color = Color(0, 0.72821355, 0.22187996, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_03iqk")
+
 [node name="PointLight2D2" type="PointLight2D" parent="lights/PointLight2D" unique_id=1539334236]
 z_index = 9
 position = Vector2(175, 1074)
