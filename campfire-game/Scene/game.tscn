@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://dlnpeufea0mhd"]
 
-[ext_resource type="PackedScene" uid="uid://blmt5dpbh4tr4" path="res://Scene/enemy.tscn" id="1_4jv7b"]
-[ext_resource type="PackedScene" uid="uid://c63n6djt4wld6" path="res://Scene/player.tscn" id="1_mhtsl"]
+[ext_resource type="PackedScene" uid="uid://c63n6djt4wld6" path="res://Scene/Player/player.tscn" id="1_mhtsl"]
 [ext_resource type="Texture2D" uid="uid://cw12mudijtvtp" path="res://Sprites/Seth's sprites/concrete_tiel-export-export.png" id="2_w51g1"]
 [ext_resource type="PackedScene" uid="uid://xvcty7vcueg8" path="res://Scene/campfire.tscn" id="3_4jv7b"]
 [ext_resource type="Texture2D" uid="uid://d2lvp6lqo74o3" path="res://Sprites/Seth's sprites/tileset_prototype.png" id="3_ihreq"]
+[ext_resource type="PackedScene" uid="uid://dj8j82l0db0mc" path="res://Scene/Enemy/enemy.tscn" id="4_03iqk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4jv7b"]
 load_path = "res://.godot/imported/concrete_tiel..png-c8758517951d07c9b53b5d106ecdd239.ctex"
@@ -604,6 +604,9 @@ fill_from = Vector2(0.47398844, 0.49421966)
 
 [node name="Game" type="Node2D" unique_id=1219891007]
 
+[node name="Enemy" parent="." unique_id=205773125 node_paths=PackedStringArray("player") instance=ExtResource("4_03iqk")]
+player = NodePath("../Player")
+
 [node name="Player" parent="." unique_id=895730674 groups=["PlayerHitbox", "player"] instance=ExtResource("1_mhtsl")]
 z_index = 3
 position = Vector2(253, -287)
@@ -676,7 +679,3 @@ position = Vector2(253, 493)
 color = Color(1, 0, 0, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_03iqk")
-
-[node name="Enemy2" parent="." unique_id=1983672463 node_paths=PackedStringArray("player") instance=ExtResource("1_4jv7b")]
-position = Vector2(656, 1178)
-player = NodePath("../Player")
