@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 @onready
+var animations = $animations
+@onready
 var state_machine = $state_machine
 @onready
 var gun = $GunPivot/Gun
@@ -31,4 +33,4 @@ func _process(delta: float) -> void:
 
 
 func _on_health_health_depleted() -> void:
-	pass # Replace with function body.
+	print("DEATH")

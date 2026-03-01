@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var dash_speed := 350
 @export var enemy_max_health := 200
 @export var bullet_scene : PackedScene
+@export var health: Health
 
 var can_shoot := true
 var enemyhealth
@@ -12,7 +13,7 @@ var can_dash := true
 @export var player : Node2D
 
 func _ready():
-	enemyhealth = enemy_max_health
+	enemyhealth = health.health
 	$AttackTimer.start()
 
 func _physics_process(delta):
@@ -78,3 +79,8 @@ func take_damage(amount):
 
 func die():
 	queue_free()
+
+
+func _on_hurt_box_enemy_received_damage(damage: int) -> void:
+	if health.health == 0:
+		die()

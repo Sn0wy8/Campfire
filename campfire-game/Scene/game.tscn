@@ -527,7 +527,7 @@ fill_from = Vector2(0.47398844, 0.49421966)
 [node name="Game" type="Node2D" unique_id=1219891007]
 
 [node name="Enemy" parent="." unique_id=1983672463 node_paths=PackedStringArray("player") instance=ExtResource("1_4jv7b")]
-position = Vector2(767, 112)
+position = Vector2(767.055, 352.14)
 player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=895730674 instance=ExtResource("1_mhtsl")]

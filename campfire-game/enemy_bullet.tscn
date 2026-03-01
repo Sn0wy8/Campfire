@@ -10,7 +10,7 @@ size = Vector2(3.5, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl7bs"]
 
-[node name="EnemyBullet" type="Area2D" unique_id=394276362]
+[node name="EnemyBullet" type="Area2D" unique_id=394276362 groups=["EnemyHitbox"]]
 script = ExtResource("1_gl7bs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1925706044]
